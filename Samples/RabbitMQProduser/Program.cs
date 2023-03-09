@@ -18,7 +18,7 @@ namespace RabbitMQProduser
 					var body = Encoding.UTF8.GetBytes(message);
 
 					channel.BasicPublish(exchange: "",
-										 routingKey: "Say.Hello",
+										 routingKey: "hello",
 										 basicProperties: null,
 										 body: body);
 					
@@ -34,11 +34,11 @@ namespace RabbitMQProduser
 		{
 			ConnectionFactory factory = new ConnectionFactory
 			{
-				UserName = "guest",
-				Password = "guest",
-				VirtualHost = "VirtualHost",
-				HostName = ""
-            };
+				UserName = "niyvrxot",
+				Password = "NmOSQmD8PLvjH5eX2ovHuqY3OR53BAv9",
+				VirtualHost = "niyvrxot",
+				HostName = "woodpecker.rmq.cloudamqp.com"
+			};
 			IConnection conn = factory.CreateConnection();
 			return conn;
 		}

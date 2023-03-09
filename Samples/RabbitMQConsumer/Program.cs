@@ -16,7 +16,7 @@ namespace RabbitMQConsumer
 				consumer.Received += (model, ea) =>
 				{
 					var body = ea.Body;
-					string message = Encoding.UTF8.GetString(body.ToArray());
+					var message = Encoding.UTF8.GetString(body.ToArray());
 
 					//throw new Exception("Всё пропало!");
 
@@ -24,7 +24,7 @@ namespace RabbitMQConsumer
 				};
 
 				
-				channel.BasicConsume(queue: "Say.Hello",
+				channel.BasicConsume(queue: "hello",
 									 autoAck: true,
 									 consumer: consumer);
 
@@ -37,11 +37,11 @@ namespace RabbitMQConsumer
 		{
 			ConnectionFactory factory = new ConnectionFactory
 			{
-                UserName = "guest",
-                Password = "guest",
-                //VirtualHost = "hyvbmeov",
-                HostName = "woodpecker.rmq.cloudamqp.com"
-            };
+				UserName = "niyvrxot",
+				Password = "NmOSQmD8PLvjH5eX2ovHuqY3OR53BAv9",
+				VirtualHost = "niyvrxot",
+				HostName = "woodpecker.rmq.cloudamqp.com"
+			};
 			IConnection conn = factory.CreateConnection();
 			return conn;
 		}
